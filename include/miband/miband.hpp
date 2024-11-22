@@ -1,5 +1,5 @@
 #pragma once
-#include  <bluetooth/bluetoothConnection.hpp>
+#include  <radio/bluetoothConnection.hpp>
 
 class MiBand {
 public:

@@ -1,5 +1,5 @@
-// codigo #include <bluetooth/bluetoothConnection.cpp>
-#include <bluetooth/bluetoothConnection.hpp>
+// codigo #include <radio/bluetoothConnection.cpp>
+#include <radio/bluetoothConnection.hpp>
 
 BluetoothConnection::BluetoothConnection() : sock(-1), connected(false) {
     // Inicializar la dirección
