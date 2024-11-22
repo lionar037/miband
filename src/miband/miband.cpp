@@ -1,4 +1,4 @@
-#include "MiBand.hpp"
+#include <miband/miband.hpp>
 
 MiBand::MiBand(const std::string& address) : deviceAddress(address) {}
 
