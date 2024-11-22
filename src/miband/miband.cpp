@@ -1,3 +1,4 @@
+#include <radio/bluetoothConnection.hpp>
 #include <miband/miband.hpp>
 
 namespace XIAOMI{

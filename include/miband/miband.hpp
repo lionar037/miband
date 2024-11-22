@@ -1,5 +1,10 @@
 #pragma once
-#include  <radio/bluetoothConnection.hpp>
+
+#include <string>
+
+namespace BLUETOOTH{
+    class BluetoothConnection;
+}
 
 namespace XIAOMI{
     class MiBand {
