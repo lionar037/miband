@@ -28,22 +28,23 @@ endef
 ################################################################################################
 ################################################################################################v
 PROJECT_NAME 	:=	src
+PRJT_NAME 	:=	miband
 
 # Detectar si es de 32 o 64 bits
 ARCH := $(shell uname -m)
 
 ifeq ($(ARCH),aarch64)
-    APP := bin/miband_app
-    $(info aarch64 mrf24_tx_app )
+    APP := bin/$(PRJT_NAME)_app
+    $(info aarch64 $(PRJT_NAME)_app )
 else ifeq ($(ARCH),armv7l) 
-    $(info armv7l mrf24_rx_app)
-    APP := bin/miband_app
+    $(info armv7l $(PRJT_NAME)_app)
+    APP := bin/$(PRJT_NAME)_app
 else ifeq ($(ARCH),x86_64)
-    APP := bin/miband_app
+    APP := bin/$(PRJT_NAME)_app
     $(info x86_64 detectado OS de 64 bits) 
 else
     $(info ningun OS detectado)
-	APP := bin/miband_app
+	APP := bin/$(PRJT_NAME)_app
 endif
 
 # Flags para generar las dependencias automáticamente
@@ -155,7 +156,7 @@ cleanall: clean
 	$(RM) "./$(APP)"
 
 cleanmrf: 
-	$(RM) -rf obj/mrf24 obj/config 
+	$(RM) -rf obj/$(PRJT_NAME) obj/config 
 
 usr-libs:
 	$(MAKE) -C $(OLED)/
