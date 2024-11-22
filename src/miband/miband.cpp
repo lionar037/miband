@@ -9,7 +9,9 @@ MiBand::~MiBand() {
 }
 
 bool MiBand::connect() {
-    return bluetoothConnection.connect(deviceAddress);
+    //return bluetoothConnection.connect(deviceAddress);
+    return bluetoothConnection.connectToDevice(deviceAddress);
+
 }
 
 void MiBand::disconnect() {
