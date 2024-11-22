@@ -1,5 +1,6 @@
+//codigo main.cpp
+
 #include <config/config.hpp>
-//#include <bluetooth/bluetoothConnection.hpp>
 #include <radio/bluetoothConnection.hpp>
 #include <miband/miband.hpp>
 #include <iostream>
@@ -9,7 +10,7 @@ int main() {
     // Dirección MAC de la Mi Band (reemplazar con la dirección correcta)
     std::string deviceAddress = ADDRESS_MIBAND ; // Dirección de la Mi Band
 
-    MiBand miBand(deviceAddress);
+    XIAOMI::MiBand miBand(deviceAddress);
 
     if (miBand.connect()) {
         // Aquí puedes añadir código para interactuar con la Mi Band
