@@ -4,20 +4,20 @@
 #include <radio/bluetoothConnection.hpp>
 #include <miband/miband.hpp>
 #include <iostream>
-
+#include <memory>
 
 int main() {
     // Dirección MAC de la Mi Band (reemplazar con la dirección correcta)
     std::string deviceAddress = ADDRESS_MIBAND ; // Dirección de la Mi Band
 
-    XIAOMI::MiBand miBand(deviceAddress);
+     auto miBand{std::make_unique<XIAOMI::MiBand>(deviceAddress)};
 
-    if (miBand.connect()) {
+    if (miBand->connect()) {
         // Aquí puedes añadir código para interactuar con la Mi Band
         std::cout << "Mi Band conectada con éxito." << std::endl;
 
         // Luego de interactuar, desconectamos
-        miBand.disconnect();
+        miBand->disconnect();
     } else {
         std::cerr << "No se pudo conectar a la Mi Band." << std::endl;
     }
