@@ -63,32 +63,31 @@ DEPS = $(ALLOBJ:.o=.d)
 # Incluir los archivos de dependencias generados (.d)
 -include $(DEPS)
 
-CC          	:= g++
-C		:= gcc
+#CC          	:= g++
+C				:= gcc
 MKDIR       	:= mkdir -p
 SRC         	:= $(PROJECT_NAME)
 OBJ         	:= obj
-LIBDIR       := include/
+LIBDIR       	:= include/
 
 # Compilar con clang++ si es de 64 bits
 ifeq ($(ARCH),x86_64)
 	CC := g++
-#CC := clang++
+#	CC := clang++
 else
+#	CC := g++
 	CC := clang++
 endif
 
 LIBS := $(CFLAGS)
 
 #se duplica , correccion 
-#INCDIRS := -I$(SRC) -I$(LIBDIR)
 ifeq ($(SRC),$(LIBDIR))
     INCDIRS := -I$(SRC)
 else
     INCDIRS := -I$(SRC) -I$(LIBDIR)
 endif
 
-#LIBS += -pthread -lbcm2835 -lnfc
 LIBS += -pthread -lbluetooth
 
 # Detectar la arquitectura del sistema
@@ -155,7 +154,7 @@ clean:
 cleanall: clean
 	$(RM) "./$(APP)"
 
-cleanmrf: 
+cleanobj: 
 	$(RM) -rf obj/$(PRJT_NAME) obj/config 
 
 usr-libs:
