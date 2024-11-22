@@ -1,6 +1,4 @@
-#ifndef MIBAND_HPP
-#define MIBAND_HPP
-
+#pragma once
 #include  <bluetooth/bluetoothConnection.hpp>
 
 class MiBand {
@@ -16,4 +14,4 @@ private:
     std::string deviceAddress;
 };
 
-#endif // MIBAND_HPP
+// MIBAND_HPP

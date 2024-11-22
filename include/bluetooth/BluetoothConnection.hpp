@@ -1,5 +1,4 @@
-#ifndef BLUETOOTH_CONNECTION_HPP
-#define BLUETOOTH_CONNECTION_HPP
+#pragma once
 
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/rfcomm.h>
@@ -20,4 +19,4 @@ private:
     bool connected;
 };
 
-#endif // BLUETOOTH_CONNECTION_HPP
+// BLUETOOTH_CONNECTION_HPP
