@@ -91,7 +91,7 @@ endif
 
 
 #LIBS += -pthread -lbcm2835 -lnfc
-LIBS += -pthread
+LIBS += -pthread -lbluetooth
 
 # Detectar la arquitectura del sistema
 ifeq ($(ARCH),x86_64)
