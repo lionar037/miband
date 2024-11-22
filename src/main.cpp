@@ -9,7 +9,8 @@ int main() {
     bdaddr_t bdaddr;
     
     // Dirección MAC de la Mi Band (reemplazar con la MAC correcta)
-    str2ba("08:16:d5:98:61:12", &bdaddr);
+    //example
+    str2ba("08:16:d5:98:xx:xx", &bdaddr);
     
     // Crear socket Bluetooth
     sock = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
