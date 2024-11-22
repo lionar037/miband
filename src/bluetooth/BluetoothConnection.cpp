@@ -1,4 +1,4 @@
-#include <bluetooth/BluetoothConnection.hpp>
+#include <bluetooth/bluetoothConnection.hpp>
 
 
 BluetoothConnection::BluetoothConnection() : sock(-1), connected(false) {

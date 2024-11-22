@@ -1,7 +1,7 @@
 #ifndef MIBAND_HPP
 #define MIBAND_HPP
 
-#include  <bluetooth/BluetoothConnection.hpp>
+#include  <bluetooth/bluetoothConnection.hpp>
 
 class MiBand {
 public:
