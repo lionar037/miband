@@ -1,5 +1,5 @@
 #include <config/config.hpp>
-#include <bluetooth/BluetoothConnection>
+#include <bluetooth/bluetoothConnection>
 #include <miband/miband.hpp>
 #include <iostream>
 
