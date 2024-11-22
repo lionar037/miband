@@ -49,7 +49,6 @@ endif
 # Flags para generar las dependencias automáticamente
 DEPFLAGS = -MMD -MP
 
-
 CFLAGS     	:= -Wall -pedantic
 
 CCFLAGS     := $(CFLAGS) -std=c++20
@@ -68,7 +67,7 @@ C		:= gcc
 MKDIR       	:= mkdir -p
 SRC         	:= $(PROJECT_NAME)
 OBJ         	:= obj
-LIBDIR          :=  include/
+LIBDIR       := include/
 
 # Compilar con clang++ si es de 64 bits
 ifeq ($(ARCH),x86_64)
@@ -77,7 +76,6 @@ ifeq ($(ARCH),x86_64)
 else
 	CC := clang++
 endif
-
 
 LIBS := $(CFLAGS)
 
@@ -88,7 +86,6 @@ ifeq ($(SRC),$(LIBDIR))
 else
     INCDIRS := -I$(SRC) -I$(LIBDIR)
 endif
-
 
 #LIBS += -pthread -lbcm2835 -lnfc
 LIBS += -pthread -lbluetooth
@@ -121,7 +118,6 @@ else
 	CCFLAGS += -O3
 endif
 
-
 ALLCPPS 	:= $(shell find $(PROJECT_NAME)/ -type f -iname *.cpp)
 #ALLOCPPSOBJ  	:= $(patsubst %.cpp,%.o,$(ALLCPPS))
 ALLCS		:= $(shell find $(PROJECT_NAME)/ -type f -iname *.c)
@@ -133,6 +129,7 @@ ALLOBJ 		:= $(foreach F,$(ALLCPPS) $(ALLCS),$(call C2O,$(F)))
 .PHONY: info libs libs-clean libs-cleanall print-vars oled
 #Generate APP
 $(APP) : $(OBJSUBDIRS) $(ALLOBJ)
+	$(MKDIR) $(dir $(APP))  # Crear el directorio 'bin' si no existe
 	$(CC) -o $(APP) $(ALLOBJ) $(LIBS)
 
 #Generate rules for all objects
