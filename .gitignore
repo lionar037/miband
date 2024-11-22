@@ -1,0 +1,7 @@
+.vscode
+bin/
+libs_nfc/
+libnfc/
+.DS_Store
+olds/
+include/config.hpp

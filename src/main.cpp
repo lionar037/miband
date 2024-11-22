@@ -1,3 +1,4 @@
+#include <config/config.hpp>
 #include <iostream>
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/rfcomm.h>
@@ -10,7 +11,7 @@ int main() {
     
     // Dirección MAC de la Mi Band (reemplazar con la MAC correcta)
     //example
-    str2ba("08:16:d5:98:xx:xx", &bdaddr);
+    str2ba( ADDRESS_MIBAND , &bdaddr);
     
     // Crear socket Bluetooth
     sock = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
