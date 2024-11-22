@@ -13,7 +13,7 @@ BluetoothConnection::~BluetoothConnection() {
     }
 }
 
-bool BluetoothConnection::connect(const std::string& deviceAddress, uint8_t channel) {
+bool BluetoothConnection::connectToDevice(const std::string& deviceAddress, uint8_t channel) {  // Renombrado
     bdaddr_t bdaddr;
     
     // Convertir la dirección MAC de string a bdaddr_t
@@ -30,7 +30,7 @@ bool BluetoothConnection::connect(const std::string& deviceAddress, uint8_t chan
     addr.rc_bdaddr = bdaddr;
 
     // Intentar conectar al dispositivo
-    if (connect(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) {
+    if (::connect(sock, (struct sockaddr*)&addr, sizeof(addr)) == -1) {  // Usamos la versión global de connect
         std::cerr << "Error conectando al dispositivo" << std::endl;
         close(sock);
         sock = -1;
