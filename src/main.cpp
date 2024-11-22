@@ -8,7 +8,7 @@
 
 int main() {
     // Dirección MAC de la Mi Band (reemplazar con la dirección correcta)
-    std::string deviceAddress = ADDRESS_MIBAND ; // Dirección de la Mi Band
+    const std::string deviceAddress = ADDRESS_MIBAND ; // Dirección de la Mi Band
 
      auto miBand{std::make_unique<XIAOMI::MiBand>(deviceAddress)};
 
